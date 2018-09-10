@@ -1,0 +1,47 @@
+public abstract class Shape
+{
+String name; // 声明属性
+public abstract double getArea(); // 抽象方法声明
+}
+
+
+public class Tritangle extends Shape // 这是Shape 的派生子类
+{
+double sideA,sideB,sideC; // 声明实例变量三角形3 条边
+public Tritangle() // 构造器
+{
+name=" 示例全等三角形";
+sideA=1.0;
+sideB=1.0;
+sideC=1.0;
+}
+public Tritangle(double sideA,double sideB,double sideC)// 构造器
+{
+name=" 任意三角形";
+this.sideA = sideA;
+this.sideB = sideB;
+this.sideC = sideC;
+}
+// 覆盖抽象方法
+public double getArea()
+{
+double s=0.5*(sideA+sideB+sideC);
+return Math.sqrt(s*(s-sideA)*(s-sideB)*(s-sideC));// 使用数学开方方法
+}
+}
+
+
+
+public class Helloworld
+{
+public static void main(String [ ] args)
+{
+Tritangle t1,t2;
+t1=new Tritangle(5.0,6.0,7.0); // 创建对象t1
+t2=new Tritangle(); // 创建对象t2
+System.out.println(t1.name+ " 的面积="+t1.getArea());
+System.out.println(t2.name+ " 的面积="+t2.getArea());
+}
+}
+
+
