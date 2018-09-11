@@ -41,7 +41,7 @@ public Circle()
 name=" 标准圆";
 radius=1.0;
 }
-public Circle(double radius)
+public Circle(double radius)  //获取传入的半径给类的变量
 {
 name=" 一般圆";
 this.radius=radius;
@@ -50,7 +50,7 @@ public double getArea() // 覆盖父类方法
 {
 return radius*radius*Math.PI; // 返回圆的面积
 }
-public double remainArea()
+public double remainArea()   //总的一个函数调用入口
 {
 Polygon p1=new Polygon(radius,radius,radius); // 创建内部类对象，调用的是内部类
 return getArea()-p1.getArea();
