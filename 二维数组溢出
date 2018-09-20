@@ -3,11 +3,12 @@ public class Test{
  public static void main(String [] args){
 
   int A[][]=new int[2][3];
-  int j,k;
+  int j,k;  //在这里设置变量是为了防止循环外无法使用循环内的变量。
   for(j=0;j<2;j++){
 
-    for(k=0;k<3;k++){
+    for(k=0;k<3;k++);
      A[j][k]=(j+1)*(k+2);
+     // System.out.print(A[j][k]+" ");  //此处的数组不用减一，不会有溢出的异常。
      }
    System.out.print(A[j][k-1]+" ");  //此处的减一是为了防止输出超出范围。
    //System.out.println();  //为了输出换行符  \n
