@@ -1,0 +1,17 @@
+public class Test{
+
+ public static void main(String [] args){
+
+  int A[][]=new int[2][3];
+  int j,k;
+  for(j=0;j<2;j++){
+
+    for(k=0;k<3;k++){
+     A[j][k]=(j+1)*(k+2);
+     }
+   System.out.print(A[j][k-1]+" ");  //此处的减一是为了防止输出超出范围。
+   //System.out.println();  //为了输出换行符  \n
+   }
+}
+}
+    
