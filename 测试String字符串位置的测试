@@ -1,0 +1,17 @@
+
+public class Test
+{
+public static void main(String [] args)
+{
+String str2=new String( "too wonderful for words;most intriguing. ") ;
+int n1=str2.indexOf('o'); //1
+int n2=str2.lastIndexOf('o'); // n=25
+int n3=str2.indexOf( "wo"); // n=4
+int n4=str2.lastIndexOf( "wo"); // n=18
+int n5=str2.indexOf('o' ,16); // n=19
+int n6=str2.indexOf('r',21); // n=32
+
+System.out.println("\t" +n1+"\t"+n2+"\t"+n3+"\t"+n4+"\t"+n5+"   "+n6);
+
+}
+}
