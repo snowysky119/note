@@ -1,0 +1,22 @@
+
+public class Test
+{
+public static void main(String [] args)
+{
+String s=new String();
+char chars1[]={'a','b','c'};
+char chars2[]={'a','b','c','d'};
+String s1=new String(chars1);
+String s2=new String(chars2,0,3);
+byte asc1[]={97,98,99};
+byte asc2[]={97,98,99,100,101};
+String s3=new String(asc1); //当数组不需要指定成员的时候，可以用不带序号的名称表示。
+String s4=new String(asc2,0,3);
+
+
+System.out.println(s1);
+System.out.println(s2);
+System.out.println(s3);
+System.out.println(s4);
+}
+}
