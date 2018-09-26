@@ -1,0 +1,25 @@
+import java.util.*;
+public class CalendarApp
+{
+String [] am_pm={" 上午"," 下午"};
+public void display(Calendar cal)
+{
+System.out.print(cal.get(Calendar.YEAR)+".");   //注意calendar中常量的使用YEAR
+System.out.print((cal.get(Calendar.MONTH)+1)+".");
+System.out.print(cal.get(Calendar.DATE)+" ");
+System.out.print(am_pm[cal.get(Calendar.AM_PM)]+" ");
+System.out.print(cal.get(Calendar.HOUR)+":");
+System.out.print(cal.get(Calendar.MINUTE)+":");
+System.out.println(cal.get(Calendar.SECOND));
+}
+public static void main(String args[])
+{
+Calendar calendar=Calendar.getInstance();// 用默认时区得到对象
+CalendarApp testCalendar=new CalendarApp();
+System.out.print(" 当前的日期时间:");
+testCalendar.display(calendar); // 调用方法显示日期时间
+calendar.set(2000,0,30,20,10,5);// 设置日期时间
+System.out.print(" 新设置日期时间:");
+testCalendar.display(calendar);
+}
+}
