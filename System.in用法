@@ -1,0 +1,4 @@
+System.in.read()可以实现输入字符，返回字符的Unicode码，但是缺点是只能输入一个字符
+System.in.read() 返回的是输入数值的 ASKII 码（一个 int 整数）。 
+如果要求输入与输出的一致的话： 通常情况下，你会用readLine( )一行一行地读取输入，
+因此要把System.in包装成BufferedReader。但在这之前还得先用InputSteamReader把System.in转换成Reader。
