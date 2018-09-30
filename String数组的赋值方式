@@ -1,0 +1,11 @@
+public class testf{
+
+public static void main(String[] args)
+{
+//String s[]=new String[]{"  ","  "};   //赋值的时候中括号中不能固定大小
+String s[]={" "," "};         //注意事项同上
+//String sk[]=new String[]{"**","**"}; 
+String sk[]={"*","*"};
+System.out.println(sk[0]);
+}
+}
