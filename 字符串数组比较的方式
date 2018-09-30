@@ -1,0 +1,28 @@
+import java.io.*;
+public class Test{
+
+public static void main(String[] args)
+{
+String s[]={"小白","3","白色"};
+
+String sk[]={"小花","100","花色"}; 
+
+try{
+
+InputStreamReader str=new InputStreamReader(System.in);   //用io包中的方法要搭配使用try......catch...来处理异常
+BufferedReader stc=new BufferedReader(str);
+
+String scer=stc.readLine();
+//System.out.println(s[0]);
+if(scer.equals(s[0])){      //此处比较的是字符串的内容是否相等，如果单纯的使用==，比较的是内存的地址是否相等。如果字符串初始化用的是同字符串，则他们
+//的内存地址的相同的，存储在同一个位置。
+ System.out.println(s[0]+s[1]+s[2]);
+
+ }else if(scer.equals(sk[0]))  {System.out.println(sk[0]+sk[1]+sk[2]);
+ }else{ System.out.println("input error");}
+                   
+}catch(Exception e){
+System.out.println(e);}
+
+}
+}
