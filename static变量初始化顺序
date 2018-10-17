@@ -1,0 +1,42 @@
+class Parent{ 
+static String name = "hello"; 
+{ 
+System.out.println("parent block"); 
+} 
+static { 
+System.out.println("parent static block"); 
+} 
+public Parent(){ 
+System.out.println("parent constructor"); 
+} 
+} 
+
+class Child extends Parent{ 
+static String childName = "hello"; 
+{ 
+System.out.println("child block"); 
+} 
+static { 
+System.out.println("child static block"); 
+} 
+public Child(){ 
+System.out.println("child constructor"); 
+} 
+} 
+
+public class Helloworld { 
+
+public static void main(String[] args) { 
+new Child();//语句(*) 
+} 
+}
+
+运行结果：
+parent static block
+child static block
+parent block
+parent constructor
+child block
+child constructor
+
+注意：初始化顺序static变量或代码块（取决于谁写在前面）--非静态成员--构造函数
