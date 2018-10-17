@@ -57,12 +57,12 @@ static{
 i++;
 System.out.println(" 执行一次");
 }
-public Helloworld(){ // 建立Demo114()构造函数
+public Helloworld(){ // 建立Helloworld构造函数
 System.out.println(" 执行二次");
 i++;
 }
 public static void main(String []args){
-Helloworld t1=new Helloworld(); // 创建t1 对象实例并调用Demo114函数
+Helloworld t1=new Helloworld(); // 创建t1 对象实例并调用Helloworld函数      注意：此时t1被初始化，会调用默认构造函数。
 System.out.println(t1.i);
 Helloworld t2=new Helloworld();
 System.out.println(t2.i);
