@@ -40,3 +40,11 @@ child block
 child constructor
 
 注意：初始化顺序static变量或代码块（取决于谁写在前面）--非静态成员--构造函数
+
+下面我们看看执行static块的几种情况：
+
+1、第一次new A()的过程会打印""；因为这个过程包括了初始化
+
+2、第一次Class.forName("A")的过程会打印""；因为这个过程相当于Class.forName("A",true,this.getClass().getClassLoader());
+
+3、第一次Class.forName("A",false,this.getClass().getClassLoader())的过程则不会打印""。因为false指明了装载类的过程中，不进行初始化。不初始化则不会执行static块。
