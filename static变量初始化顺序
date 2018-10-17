@@ -48,3 +48,24 @@ child constructor
 2、第一次Class.forName("A")的过程会打印""；因为这个过程相当于Class.forName("A",true,this.getClass().getClassLoader());
 
 3、第一次Class.forName("A",false,this.getClass().getClassLoader())的过程则不会打印""。因为false指明了装载类的过程中，不进行初始化。不初始化则不会执行static块。
+
+
+public class Helloworld{
+static int i=1;
+static{
+// 该静态区域块只被执行一次
+i++;
+System.out.println(" 执行一次");
+}
+public Helloworld(){ // 建立Demo114()构造函数
+System.out.println(" 执行二次");
+i++;
+}
+public static void main(String []args){
+Helloworld t1=new Helloworld(); // 创建t1 对象实例并调用Demo114函数
+System.out.println(t1.i);
+Helloworld t2=new Helloworld();
+System.out.println(t2.i);
+}
+}
+
