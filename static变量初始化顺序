@@ -16,7 +16,7 @@ static String childName = "hello";
 { 
 System.out.println("child block"); 
 } 
-static { 
+static {          //satic代码块只被执行一次
 System.out.println("child static block"); 
 } 
 public Child(){ 
