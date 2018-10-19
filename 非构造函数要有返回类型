@@ -1,0 +1,22 @@
+public class Test{
+public static void main(String []args){
+
+int i=5,j=13;
+int m=320,n=260;
+Calculation cal=new Calculation() ;
+cal.Calcul(i,m);
+cal.Calcul(j,n);
+
+}
+}
+
+
+
+
+class Calculation{
+ 
+ public void Calcul(int quan,int price){    //如果不是构造函数在声明的时候要有返回类型。
+  int j=quan*price;
+   System.out.println(j);
+}
+}
