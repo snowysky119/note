@@ -1,0 +1,30 @@
+import java.util.*; // 加载包
+public class Work10{
+public static void main(String []args){
+Monkey mo=new Monkey();
+mo.scan();
+}
+}
+
+class Monkey{
+//day 哪天的桃子数， sday 吃了多少天剩下一个
+public static int peach(int day,int sday){ // 建一个peach 方法
+if(day==sday){
+return 1;
+}else{
+return (peach(day+1,sday)+1)*2; // 算法返回值，此处涉及到java中递归和迭代方法的使用。
+}
+}
+public static void scan(){ // 建立输入的方法
+int a=1;
+System.out.println(" 请输入要吃几天： ");
+Scanner sr=new Scanner(System.in);
+int b=sr.nextInt();
+if(a<b){
+System.out.print(Monkey.peach(a,b));
+}else{
+System.out.println(" 不能小于等于1 天");
+Monkey.scan();       //此处也有循环调用该方法的使用。
+}
+}
+}
