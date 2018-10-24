@@ -1,0 +1,21 @@
+示例：不全
+
+import java.util.*;
+public class Work13 {
+public static void main(String[] args) {
+Scanner sr=new Scanner(System.in); // 接收键盘输入
+System.out.println(" 输入1-25 的数字，你可以移动马里奥，输入其它数字退出
+");
+int i=sr.nextInt(); // 将键盘输入数字赋值给i
+Maria m=new Maria(); // 建立调用Maria 构造方法
+for(int a=i;a<=25;a--){
+if(i<25){
+m.move(i);
+i=sr.nextInt();   //此时会出现输入要求，注意
+}else{
+System.out.println(" 退出游戏!");
+break;
+}
+}
+}
+}
