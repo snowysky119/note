@@ -21,7 +21,7 @@ System.out.println(" 请输入要吃几天： ");
 Scanner sr=new Scanner(System.in);
 int b=sr.nextInt();
 if(a<b){
-System.out.print(Monkey.peach(a,b));
+System.out.print(Monkey.peach(a,b)); //注意调用方法的方式。
 }else{
 System.out.println(" 不能小于等于1 天");
 Monkey.scan();       //此处也有循环调用该方法的使用。
