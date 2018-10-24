@@ -1,0 +1,31 @@
+
+public class Test{
+
+public static void main(String [] args){
+int i=4;
+switch(i){
+default:
+System.out.println("default"); // 执行此语句，因为没有break语句，所以会一直往下执行下去，直到遇到break语句。
+case 0:
+System.out.println("zero"); // 执行此语句
+break;
+case 1:
+System.out.println("one");
+case 2:
+System.out.println("two");
+}
+}
+}
+
+运行的结果：
+default
+zero
+
+使用注意事项：每一环节都要有break（包括default）。case后面需要跟常量。switch中的判断数据类型（byte，short，int，char，String）。
+break使用事项：(1) 简单的一个continue会退回最内层循环的开头（顶部），并继续执行。
+              (2) 带有标签的continue会到达标签的位置，并重新进入紧接在那个标签后面的循环  
+              (3) break会中断当前循环，并移离当前标签的末尾。     
+              (4) 带标签的break会中断当前循环，并移离由那个标签指示的循环的末尾。
+              扩展：
+              Java中，goto语句作为保留字，并未能够正式使用。但在continue和break两个关键字，有类似goto的使用。
+              当然，continue和break不止能够用在for循环中，也可以在while和do-while中使用。
