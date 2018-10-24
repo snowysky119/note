@@ -1,0 +1,12 @@
+public class Test{
+public static void main(String args[]){
+//Test.amethod();  此中调用方法会导致编译报错，引用了非静态方法，如果amethod()设置为静态方法则会顺利通过编译。
+Test m=new Test();
+m.amethod();
+}
+public void amethod(){
+int a=1;
+System.out.println(a);
+}
+
+}
