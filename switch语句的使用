@@ -1,0 +1,22 @@
+
+public class Test{
+
+public static void main(String [] args){
+int i=4;
+switch(i){
+default:
+System.out.println("default"); // 执行此语句
+case 0:
+System.out.println("zero"); // 执行此语句
+break;
+case 1:
+System.out.println("one");
+case 2:
+System.out.println("two");
+}
+}
+}
+
+运行的结果：
+default
+zero
