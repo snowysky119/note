@@ -21,7 +21,7 @@ System.out.println("two");
 default
 zero
 
-使用注意事项：每一环节都要有break（包括default）。case后面需要跟常量。switch中的判断数据类型（byte，short，int，char，String）。
+使用注意事项：每一环节都要有break（包括default）。case后面需要跟常量（只能是一个）。switch中的判断数据类型（byte，short，int，char，String，表达式）。
 break使用事项：(1) 简单的一个continue会退回最内层循环的开头（顶部），并继续执行。
               (2) 带有标签的continue会到达标签的位置，并重新进入紧接在那个标签后面的循环  
               (3) break会中断当前循环，并移离当前标签的末尾。     
