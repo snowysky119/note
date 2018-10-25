@@ -1,0 +1,35 @@
+import java.util.*;
+public class Test{
+
+public static void main(String []args){
+System.out.println("你还想继续吗？1继续,2退出");
+            
+System.out.println("请输入你的选择!");
+            
+Scanner sc = new Scanner(System.in);
+//int i=sc.nextInt();            
+if(1==sc.nextInt()){
+                
+System.out.println("继续");
+;
+            
+}else if(2==sc.nextInt()){  //此处需要输入两次。因为有两次比较产生，相当于输入。
+                
+//sc.nextLine();
+                
+sc.close();
+                
+System.out.println("已退出");
+            
+}
+else{
+                
+System.out.println("不合法输入");
+                
+//begin();
+            }
+
+
+//System.out.println(Test.Sum(5));
+}
+}
