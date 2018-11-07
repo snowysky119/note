@@ -28,7 +28,7 @@ public class ThrowTest {
     //该方法内抛出一个Exception异常对象，必须捕获或抛给调用者
     public static void throwChecked(int a) throws Exception {
         if(a < 0) {
-            throw new Exception("a的值应大于0，不符合要求")
+            throw new Exception("a的值应大于0，不符合要求")   //此处
         }
     }
     //该方法内抛出一个RuntimeException对象，可以不理会直接交给JVM处理
@@ -38,3 +38,13 @@ public class ThrowTest {
         }
     }
 }
+
+运行结果：
+Test.java:25: 错误: 需要';'
+throw new Exception("a的值应大于0，不符合要求")
+                                    ^
+Test.java:38: 错误: 需要';'
+throw new RuntimeException("a的值应大于0，不符合要求")
+                                           ^
+
+
