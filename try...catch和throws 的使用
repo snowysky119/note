@@ -1,0 +1,40 @@
+例一：
+class IoExam3_1
+{
+public static void main(String [] args)
+{
+int num1=0;
+try
+{
+System.out.print(" 请输入一个字符： ");
+num1=System.in.read(); //从键盘上输入一个字符并把它赋给num1
+}
+catch(Exception e1) { }
+System.out.println(" 以数值方式显示，是输入字符的ASCII 值= "+num1);
+System.out.println(" 以字符方式显示，显示的是字符本身= "+(char)num1);
+}
+}
+
+例二：
+public class ThrowTest {
+    public static void main(String[] args) {
+        try{
+            throwChecked(3);
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+        throwRuntime(-3);
+    }
+    //该方法内抛出一个Exception异常对象，必须捕获或抛给调用者
+    public static void throwChecked(int a) throws Exception {
+        if(a < 0) {
+            throw new Exception("a的值应大于0，不符合要求")
+        }
+    }
+    //该方法内抛出一个RuntimeException对象，可以不理会直接交给JVM处理
+    public static void throwRuntime(int a) {
+        if(a < 0) {
+            throw new RuntimeException("a的值应大于0，不符合要求")
+        }
+    }
+}
