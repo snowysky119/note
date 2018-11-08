@@ -1,0 +1,142 @@
+import java.util.*;
+public class Demo151 {
+public static void main(String[] args) {
+Result rs=new Result();
+while(true){
+System.out.println(" 学生成绩管理系统");
+System.out.println("1 、录入学生成绩");
+System.out.println("2 、通过学号查成绩");
+System.out.println("3 、通过成绩查学号");
+System.out.println("4 、统计成绩分类人数");
+System.out.println("5 、通过学号删除成绩");
+Java从入门到精通全过程
+130 | 450
+注：笔记中所有示例都能正常通过编译
+System.out.println("0 、退出系统");
+System.out.println(" 请选择操作： ");
+Scanner sr=new Scanner(System.in);
+int num=sr.nextInt();
+if(num==1){
+System.out.println(" 需要录入多少学生成绩： ");
+int j=sr.nextInt();
+for(int i=0;i<j;i++){
+System.out.print(" 请输入第"+(i+1)+" 位学生的成绩： ");
+float Score=sr.nextFloat();
+Student student=new Student(Score);
+rs.addResult(student);
+}
+}else if(num==2){
+rs.Id();
+}else if(num==3){
+rs.Score();
+}else if(num==4){
+rs.Count();
+}else if(num==5){
+rs.Del();
+}else if(num==0){
+System.out.println(" 退出系统");
+System.exit(0);
+}
+}
+}
+}
+
+
+class Result{
+Scanner sr=new Scanner(System.in);
+private ArrayList<Student> al=null;
+// 构造函数，利用构造函数建立集合。
+public Result(){
+al=new ArrayList<Student>();
+}
+
+
+// 加入成绩
+public void addResult(Student student){    //如果在主方法中无法直接使用，可以再包装一下。
+al.add(student);   
+}
+
+
+// 输入入学号，打印学生成绩
+public void Id(){
+System.out.println(" 请输入查询学号进行查询： ");
+int id=sr.nextInt();
+for(int i=0;i<al.size();i++){
+if(id==i){
+Student st=al.get(i-1);
+System.out.println(" 学号为： "+id+" 成绩是： "+st.getScore());
+}
+}
+}
+
+
+// 输入成绩，打印学号
+public void Score(){
+System.out.println(" 请输入成绩进行查询： ");
+float Score=sr.nextFloat();
+for(int i=0;i<al.size();i++){
+if(Score==al.get(i).getScore()){
+System.out.println(" 成绩是： "+Score+" 得此成绩的学号为："+(i+1));
+}
+}
+}
+
+
+// 统计各个分数阶段人数( 不及格、及格、中、良、优)
+public void Count(){
+int a=0,b=0,c=0,d=0,e=0,f=0;
+for(int i=0;i<al.size();i++){
+if(al.get(i).getScore()==100f&&al.get(i).getScore()>=90f){
+a++;
+}else if(al.get(i).getScore()<90f&&al.get(i).getScore()>=80f){
+b++;
+}else if(al.get(i).getScore()<80f&&al.get(i).getScore()>=70f){
+c++;
+}else if(al.get(i).getScore()<70f&&al.get(i).getScore()>=60f){
+d++;
+}else if(al.get(i).getScore()<60f&&al.get(i).getScore()>0){
+e++;
+}else if(al.get(i).getScore()==0){
+f++;
+}
+}
+System.out.println(" 成绩优有： "+a+" 人");
+System.out.println(" 成绩良有： "+b+" 人");
+System.out.println(" 成绩中有： "+c+" 人");
+Java从入门到精通全过程
+132 | 450
+注：笔记中所有示例都能正常通过编译
+System.out.println(" 成绩差有： "+d+" 人");
+System.out.println(" 不及格有： "+e+" 人");
+System.out.println(" 无成绩有： "+f+" 人");
+}
+
+
+// 通过学号删除成绩
+public void Del(){
+System.out.println(" 请输入要删除成绩的学号： ");
+int id=sr.nextInt();
+id=id-1;
+for(int i=0;i<al.size();i++){
+if(id==i){
+al.set(i, null);     //集合中可以用null作为元素。
+System.out.println(" 学号是： "+(id+1)+" 的成绩已清除");
+}
+}
+}
+}
+
+
+class Student{
+private float Score;
+public Student(float Score){
+this.Score=Score;
+}
+public float getScore() {
+return Score;
+}
+public void setScore(float score) {
+Score = score;
+}
+}
+
