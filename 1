@@ -1,0 +1,121 @@
+import java.util.*;
+public class Demo153 {
+public static void main(String[] args) {
+Judge judge=new Judge();
+System.out.println(" 得分:"+judge.lastFen());
+System.out.println(" 打分最差的是裁判是： "+(judge.getWorst()+1));
+System.out.println(" 打分最好的是裁判是： "+(judge.getBest()+1));
+}
+}
+class Judge{
+// 定义一个可以存放8 个float 类型的数组
+float fens[]=null;
+int size=3; // 定义几个裁判
+// 构造函数
+public Judge(){         //   
+fens=new float[size];
+Scanner sr=new Scanner(System.in);
+// 初始化
+try {
+for(int i=0;i<fens.length;i++){
+System.out.println(" 请输入第"+(i+1)+" 个裁判的成绩： ");
+fens[i]=sr.nextFloat();
+}
+} catch (Exception e) {
+System.out.println(" 输入的不是float 类型!");
+e.printStackTrace();
+}finally{
+Java从入门到精通全过程
+137 | 450
+注：笔记中所有示例都能正常通过编译
+try {
+sr.close();
+} catch (Exception e2) {
+e2.printStackTrace();
+}
+}
+}
+// 得到打分最差评委
+public int getWorst(){
+float lastFen=this.lastFen();
+float tempCai=0f;
+// 我认为第一个评委打分是最差的
+int worstIndex=0;
+float cai= Math.abs(fens[0]-lastFen); // 使用Math 来返回一个数学绝对值
+for(int i=1;i<fens.length;i++){
+tempCai=Math.abs(fens[i]-lastFen);
+if(cai<tempCai){
+worstIndex=i;
+cai=tempCai;
+}
+}
+return worstIndex;
+}
+// 得到打分最好评委
+public int getBest(){
+float lastFen=this.lastFen();
+float tempHao=0f;
+// 我认为第一个评委打分是最好的
+int bestIndex=0;
+float hao=Math.abs(fens[0]-lastFen); // 使用Math 来返回一个数学绝对值
+for(int i=1;i<fens.length;i++){
+tempHao=Math.abs(fens[i]-lastFen);
+if(hao>tempHao){
+bestIndex=i;
+hao=tempHao;
+}
+}
+return bestIndex;
+}
+// 得到最后评分
+public float lastFen(){
+Java从入门到精通全过程
+138 | 450
+注：笔记中所有示例都能正常通过编译
+//3 、得到最后分数
+float allFen=0;
+int minIndex=this.getminFenIndex();
+int maxIndex=this.getMaxFenIndex();
+// 遍历
+for(int i=0;i<fens.length;i++){
+if(i!=minIndex&&i!=maxIndex){
+allFen+=fens[i];
+}
+}
+return allFen/(fens.length-2);
+}
+//1 、去掉最低分( 目地就是找到最低分的下标)
+public int getminFenIndex(){
+// 选择法
+// 认为第一个是最低分
+float minFen=fens[0];
+int minIndex=0;
+for(int i=1;i<fens.length;i++){
+if(minFen>fens[i]){
+// 当minFen 大于fens[i] 修改最低分minFen
+minFen=fens[i];
+minIndex=i;
+}
+}
+return minIndex;
+}
+//2 、去掉最高分( 目地就是找到最高分的下标)
+public int getMaxFenIndex(){
+// 选择法
+// 认为第一个是最低分
+float maxFen=fens[0];
+int maxIndex=0;
+for(int i=1;i<fens.length;i++){
+if(maxFen<fens[i]){
+// 当maxFen大于fens[i] 修改最低分maxFen
+maxFen=fens[i];
+maxIndex=i;
+}
+}
+return maxIndex;
+}
+}
+
+
+
+
