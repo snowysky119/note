@@ -1,0 +1,14 @@
+public int getminFenIndex(){
+// 选择法
+// 认为第一个是最低分
+float minFen=fens[0];   //将第一个元素赋值给变量。
+int minIndex=0;        //将第一个数组元素的下标赋值给变量。
+for(int i=1;i<fens.length;i++){
+if(minFen>fens[i]){
+// 当minFen 大于fens[i] 修改最低分minFen
+minFen=fens[i];
+minIndex=i;
+}
+}
+return minIndex;
+}
