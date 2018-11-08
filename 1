@@ -12,7 +12,7 @@ class Judge{
 float fens[]=null;
 int size=3; // 定义几个裁判
 // 构造函数
-public Judge(){         //   
+public Judge(){         //此处的构造函数功能是建立一个公用的数组。   
 fens=new float[size];
 Scanner sr=new Scanner(System.in);
 // 初始化
@@ -36,7 +36,7 @@ e2.printStackTrace();
 }
 }
 // 得到打分最差评委
-public int getWorst(){
+public int getWorst(){           //数组之间的比较，可以利用第一个元素赋值的方式。
 float lastFen=this.lastFen();
 float tempCai=0f;
 // 我认为第一个评委打分是最差的
