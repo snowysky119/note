@@ -37,7 +37,7 @@ e2.printStackTrace();
 }
 // 得到打分最差评委
 public int getWorst(){           //数组之间的比较，可以利用第一个元素赋值的方式。
-float lastFen=this.lastFen();
+float lastFen=this.lastFen();   //此处this的使用，表示是此类的方法。
 float tempCai=0f;
 // 我认为第一个评委打分是最差的
 int worstIndex=0;
