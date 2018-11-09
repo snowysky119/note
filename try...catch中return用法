@@ -1,0 +1,30 @@
+import java.io.*;
+public class Test{
+public static void main(String argv[]){
+Test m=new Test();
+System.out.println(m.amethod());
+}
+
+public int amethod(){
+try{
+FileInputStream dis=new FileInputStream("Hello.txt");
+}catch(FileNotFoundException fne){
+
+System.out.println("No such file found");
+return -1; // 虚拟机会记录，但要运行后finally 语句块后才返回
+}catch(IOException ioe){
+}finally{
+System.out.println("Doing finally");
+}
+return 0;    //此处的return语句不被执行
+}
+}
+
+运行结果:
+No such file found
+Doing finally
+-1
+
+备注：try语句块执行到1处时，会将会将函数的返回值存放到另外一个临时变量（不同与c的变量，它的值为102）中，由于未发生异常，
+紧接着将会执行finally语句块，2处又遇到一个语句块，并将返回值存放到临时变量（值为3）中，最终返回的是此处的临时变量的值，
+此处return执行完成后，该方法结束。
