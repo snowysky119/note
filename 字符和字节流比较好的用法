@@ -1,0 +1,12 @@
+总结以上内容，得出比较好的规范用法： 
+1） File file = new File ("hello.txt"); 
+FileInputStream in=new FileInputStream (file);  //建立一个通向file文件的字节流
+
+2） File file = new File ("hello.txt"); 
+FileInputStream in=new FileInputStream (file);   //建立一个通向file文件的字节流
+InputStreamReader inReader=new InputStreamReader (in,"UTF-8");   //将通向file文件的字节流转换为字符流
+BufferedReader bufReader=new BufferedReader(inReader); //讲转换为字符流的文件写入缓冲区
+
+3） File file = new File ("hello.txt"); 
+FileReader fileReader=new FileReader(file);   //建立一个通向file文件的字符流
+BufferedReader bufReader=new BufferedReader(fileReader);    //将通向file文件的字符流写到缓冲区
